@@ -2,18 +2,9 @@
 
 include('User.php');
 include('UserMapper.php');
+include('DBConnection.php');
 
-$db_host = "localhost";
-$db_name = "php_pure_registration_db";
-$db_charset = "utf8";
-$db_user = "root";
-$db_password = "";
-$dsn = "mysql:host=$db_host; dbname=$db_name; charset=$db_charset;";
-$opt = [
-	PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-	PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-	];
-$pdo = new PDO($dsn, $db_user, $db_password, $opt);
+$pdo = DBConnection::get();
 
 $user = new User();
 $user->firstname = $_POST['firstname'];
