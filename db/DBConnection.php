@@ -1,6 +1,9 @@
 <?php
 
-include('DBConfig.php');
+namespace db;
+
+use PDO;
+use \config\DBConfig;
 
 class DBConnection 
 {

@@ -1,5 +1,9 @@
 <?php
 
+namespace config;
+
+use PDO;
+
 class DBConfig 
 {
 	public $db_host;

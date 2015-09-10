@@ -1,8 +1,11 @@
 <?php
 
-include('User.php');
-include('UserMapper.php');
-include('DBConnection.php');
+spl_autoload_extensions(".php");
+spl_autoload_register();
+
+use \models\User;
+use \datamappers\UserMapper;
+use \db\DBConnection;
 
 $pdo = DBConnection::get();
 
@@ -23,7 +26,7 @@ if ( $userMapper->save($user) )
 }
 else 
 {
-	$redirectUrl = "signup.php";
+	$redirectUrl = "public\signup.html";
 }
 header("Location: $redirectUrl");
 die(); 

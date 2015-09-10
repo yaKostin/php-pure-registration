@@ -1,5 +1,10 @@
 <?php 
 
+namespace datamappers;
+
+use PDO;
+use models\User;
+
 class UserMapper 
 {
 	protected $pdo;
